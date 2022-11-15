@@ -40,9 +40,10 @@ select * FROM employees;
 DROP table if exists salaries;
 
 CREATE table salaries(
-	emp_no int references employees(emp_no), 
-	salary int,
-	primary key(emp_no, salary)
+	emp_no int not NULL,  
+	salary int NOT NULL, 
+	primary key(emp_no, salary),
+	foreign key (emp_no) REFERENCES employees(emp_no)
 );
 --View table-- 
 select * from salaries; 
